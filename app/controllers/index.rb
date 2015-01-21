@@ -19,6 +19,10 @@ end
 
 post '/sessions' do
   # sign-in
+  if @user = User.authenticate(params[:email], params[:password])
+    sessions[:user_id] = @user.id
+  end
+  redirect '/'
 end
 
 delete '/sessions/:id' do
