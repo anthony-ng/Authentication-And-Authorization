@@ -35,6 +35,7 @@ end
 
 get '/users/new' do
   # render sign-up page
+  erb :sign_up
 end
 
 post '/users' do
