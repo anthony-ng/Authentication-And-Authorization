@@ -20,14 +20,14 @@ end
 post '/sessions' do
   # sign-in
   if @user = User.authenticate(params[:email], params[:password])
-    sessions[:user_id] = @user.id
+    session[:user_id] = @user.id
   end
   redirect '/'
 end
 
 delete '/sessions/:id' do
   # sign-out -- invoked
-  sessions[:user_id] = nil
+  session[:user_id] = nil
   redirect '/'
 end
 
@@ -40,4 +40,12 @@ end
 
 post '/users' do
   # sign-up a new user
+  @user = User.new(params[:user])
+  @user.save
+
+  if @user.save == true
+    session[:user_id] = @user.id
+  end
+
+  redirect '/'
 end
