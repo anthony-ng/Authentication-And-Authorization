@@ -6,4 +6,14 @@
   <li>If user is signed in then  display all users</li>
   </ol>
 
+  <h3>
+    Hello, <%= @user.name %>
+  </h3>
+
+  <% if current_user %>
+    <% @users.each do |user| %>
+      <p>My friend, <%= user.name.to_s %></p>
+    <% end %>
+  <% end %>
+
 </div>
