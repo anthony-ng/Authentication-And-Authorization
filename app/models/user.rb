@@ -8,5 +8,11 @@ class User < ActiveRecord::Base
     self.password_hash = BCrypt::Password.create(new_password)
   end
 
+  def self.authenticate(email, password)
+    user = User.find_by_email(email)
+    if user && user.password == password
+      return user
+    end
+  end
 
 end
