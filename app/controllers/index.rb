@@ -27,6 +27,8 @@ end
 
 delete '/sessions/:id' do
   # sign-out -- invoked
+  sessions[:user_id] = nil
+  redirect '/'
 end
 
 #----------- USERS -----------
