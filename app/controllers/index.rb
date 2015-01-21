@@ -1,11 +1,12 @@
 get '/' do
   # render home page
  #TODO: Show all users if user is signed in
- if session[:user_id]
-  @user = User.find(session[:user_id])
-else
-  @user = User.new(name: "guest")
-end
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+  else
+    @user = User.new(name: "guest")
+  end
+  @users = User.all
   erb :index
 end
 
@@ -13,6 +14,7 @@ end
 
 get '/sessions/new' do
   # render sign-in page
+  erb :sign_in
 end
 
 post '/sessions' do
