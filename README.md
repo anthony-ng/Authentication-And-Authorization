@@ -1,4 +1,4 @@
-# Sinatra Authentication And Authorization
+# Sinatra: Authentication and Authorization
 
 ## Summary
 
