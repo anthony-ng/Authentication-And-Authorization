@@ -1,12 +1,8 @@
-# P3 Sinatra Authentication And Authorization
-
-## Learning Competencies
-
-* Implement user login and authentication.
+# Sinatra Authentication And Authorization
 
 ## Summary
 
-Using Sinatra, create a user signin/signup and authenticate signed in users before displaying information. Start from the skeleton in the `authentication` directory which contains a shell of database, views and controllers.
+Using Sinatra, I created a simple user signin/signup and authenticate signed in users before displaying information.
 
 ## Releases
 
@@ -25,12 +21,13 @@ Modify the skeleton code to achieve the following functionality:
 
 Storing passwords is a serious business, and you should always take steps to keep that information secure. User passwords should be encrypted and stored in a password-hash field.  You may implement this yourself or use the `bcyrpt` gem.
 
-### Release 2: Validation (optional)
+### Release 2: Validation
 Demonstrate model validation, error messages, and user access levels.
 
 * Add validation to the user model including password length and appropriately formated email.
 * Display appropriate error messages to the user for invalid data.
 Add a field to store user access level (Admin / Student) and limit functionality to different users leves. (ie an Admin can edit users but a Student can only see other users).
 
+## Learning Competencies
 
-## Resources
+* Implement user login and authentication.
